@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\ShortSchedule\shortSchedule;
 
 class Kernel extends ConsoleKernel
 {
@@ -22,12 +23,19 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
-    protected function schedule(Schedule $schedule)
+    protected function shortSchedule(ShortSchedule $shortSchedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $shortSchedule->command('get:message')->everySecond();
+    }
+
+    protected function Schedule(Schedule $Schedule)
+    {
+        //$Schedule->command('get:message')->everyMinute();
+        ///WTF
     }
 
     /**
+     *
      * Register the commands for the application.
      *
      * @return void

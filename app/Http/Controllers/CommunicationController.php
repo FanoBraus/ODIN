@@ -33,7 +33,7 @@ class CommunicationController extends Controller
             ]]);
         } elseif($last_command == '/choose_bus_type') {
 
-            $user->last_command = '/choose_route_number'
+            $user->last_command = '/choose_route_number';
 
             $user->save();
 
